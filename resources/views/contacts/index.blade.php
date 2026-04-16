@@ -125,6 +125,12 @@
                                     <td class="px-6 py-4 text-slate-700">{{ $contact->address ?: '—' }}</td>
                                     <td class="px-6 py-4">
                                         <div class="flex justify-end gap-2">
+                                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ rawurlencode($contact->email) }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-xl border border-sky-200 bg-sky-50 px-3 py-2 text-xs font-semibold text-sky-700 transition hover:border-sky-300 hover:bg-sky-100">
+                                                Gmail
+                                            </a>
+                                            <a href="tel:{{ preg_replace('/\D+/', '', $contact->phone) }}" class="inline-flex items-center rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100">
+                                                Call
+                                            </a>
                                             <a href="{{ route('contacts.edit', $contact) }}" class="inline-flex items-center rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50">
                                                 Edit
                                             </a>
@@ -170,6 +176,15 @@
                             </dl>
 
                             <div class="mt-5 flex gap-2">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ rawurlencode($contact->email) }}" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center rounded-2xl border border-sky-200 bg-sky-50 px-4 py-3 text-sm font-semibold text-sky-700 transition hover:border-sky-300 hover:bg-sky-100">
+                                    Gmail
+                                </a>
+                                <a href="tel:{{ preg_replace('/\D+/', '', $contact->phone) }}" class="inline-flex flex-1 items-center justify-center rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-100">
+                                    Call
+                                </a>
+                            </div>
+
+                            <div class="mt-2 flex gap-2">
                                 <a href="{{ route('contacts.edit', $contact) }}" class="inline-flex flex-1 items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50">
                                     Edit
                                 </a>
