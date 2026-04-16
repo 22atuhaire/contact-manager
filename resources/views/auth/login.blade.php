@@ -95,6 +95,12 @@
                     </button>
                 </div>
 
+                <div class="text-center text-sm text-slate-600">
+                    <a href="{{ route('password.request') }}" class="font-semibold text-slate-950 hover:text-emerald-700">
+                        Forgot your password?
+                    </a>
+                </div>
+
                 <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-center text-sm text-slate-600">
                     New here?
                     <a href="{{ route('register') }}" class="font-semibold text-slate-950 hover:text-emerald-700">
